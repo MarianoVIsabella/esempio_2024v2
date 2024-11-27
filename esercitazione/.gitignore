@@ -9,6 +9,7 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+### se vuoi ignorare tutta la cartella .idea metti .idea qui ###
 *.iws
 *.iml
 *.ipr
