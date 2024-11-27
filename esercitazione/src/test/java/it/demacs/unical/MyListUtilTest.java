@@ -1,5 +1,10 @@
 package it.demacs.unical;
 
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,10 +34,18 @@ public class MyListUtilTest {
     }
     @Test
     public void ascendingSortingWorks(){
+        DateTime begin = new DateTime();
+        System.out.println("Tempo inizio test: "+begin.getMillis());
         assertEquals(myListUtil.sort(list,0),ascendingList);
+        DateTime end = new DateTime();
+        System.out.println("Tempo fine test:" +end.getMillis());
     }
     @Test
     public void descendingSortingWorks(){
+        DateTime begin = new DateTime();
+        System.out.println("Tempo inizio test: "+begin.getMillis());
         assertEquals(myListUtil.sort(list,1),descendingList);
+        DateTime end = new DateTime();
+        System.out.println("Tempo fine test:" +end.getMillis());
     }
 }
