@@ -5,6 +5,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,8 @@ public class MyListUtilTest {
     @BeforeEach
     public void prepareTesting(){
         myListUtil = new MyListUtil();
+        DateTime begin = new DateTime();
+        System.out.println("Tempo inizio test: "+begin.getMillis());
     }
     @BeforeAll
     public static void prepareLists(){
@@ -32,20 +35,17 @@ public class MyListUtilTest {
         ascendingList = Arrays.asList(ascendingOrder);
         descendingList = Arrays.asList(descendingOrder);
     }
-    @Test
-    public void ascendingSortingWorks(){
-        DateTime begin = new DateTime();
-        System.out.println("Tempo inizio test: "+begin.getMillis());
-        assertEquals(myListUtil.sort(list,0),ascendingList);
+    @AfterEach
+    public void endTesting(){
         DateTime end = new DateTime();
         System.out.println("Tempo fine test:" +end.getMillis());
     }
     @Test
+    public void ascendingSortingWorks(){
+        assertEquals(myListUtil.sort(list,0),ascendingList);
+    }
+    @Test
     public void descendingSortingWorks(){
-        DateTime begin = new DateTime();
-        System.out.println("Tempo inizio test: "+begin.getMillis());
         assertEquals(myListUtil.sort(list,1),descendingList);
-        DateTime end = new DateTime();
-        System.out.println("Tempo fine test:" +end.getMillis());
     }
 }
