@@ -1,1 +1,1 @@
-# esempio_2024v2
+# Some practice with git, maven and testing :)
